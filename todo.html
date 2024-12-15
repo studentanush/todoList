@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body style=" background-color: rgb(227, 67, 248);border: 20px;display: flex;justify-content:space-between">
+      <div id="box1">
+        <div >
+          <h1 style="color: white; font-weight: bolder;">ToDo  List</h1>
+        </div>  
+        <input style="color: white;background-color: rgb(41, 30, 30);width: 180px;height: 25px;padding-right: 20px;padding-left: 30px;font-size:small;" type="text" placeholder="ENTER TODO HERE">
+        <button onclick="addtodo()" style="cursor:pointer;height: 30px; width: 95px;font-weight: bolder;color: rgb(12, 12, 12);padding-right: 20px;  ">Add Todo</button>
+        <script > 
+            let ctr=1;
+            function addtodo(){
+                const divEl = document.querySelector("input");
+                const value=divEl.value;
+
+                const newDivEl=document.createElement("div");
+                newDivEl.setAttribute("id", ctr);
+                
+                
+                newDivEl.innerHTML="<div>" + value + '</div><button onclick="deleteTodo(' + ctr + ')">delete</button>';
+
+                const parentEl=document.querySelector("#box1");
+                parentEl.appendChild(newDivEl);
+                ctr=ctr+1;
+            }
+            function deleteTodo(index){
+                const element=document.getElementById(index);
+                element.parentNode.removeChild(element);
+
+                
+            }
+        </script>
+
+      </div>
+      <div>
+        <img style="height: 620px;width: 700px;border-color: aqua;border-radius: 20px;" src="https://static.vecteezy.com/system/resources/previews/003/529/153/non_2x/business-to-do-list-flat-icon-modern-style-vector.jpg">
+      </div>
+
+        
+        
+    
+    </body>
+</html>
