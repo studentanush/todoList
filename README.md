@@ -1,2 +1,2 @@
 # todoList
-made todo list using
+Made todo list using HTML,CSS and DOM
